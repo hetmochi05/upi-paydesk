@@ -53,8 +53,10 @@ upi-paydesk/
 ├── README.md
 │
 └── screenshots/
-    ├── generator.png
-    └── history.png
+    ├── dark-mode.png
+    ├── generated-qr.png
+    ├── history.png
+    └── light-mode.png
 ```
 
 ## How It Works
@@ -123,9 +125,7 @@ Open `index.html` in a web browser.
 
 For development, you can also use the **Live Server** extension in VS Code.
 
-## Screenshots
-
-Add your project screenshots inside the `screenshots` folder and update the paths below.
+## Preview Of My Project  
 
 ### QR Generator
 
@@ -135,13 +135,17 @@ Add your project screenshots inside the `screenshots` folder and update the path
 
 ![UPI PayDesk History](screenshots/history.png)
 
+### UPI PayDesk
+
+![UPI PayDesk Light Mode](screenshots/light-mode.png)
+![UPI PayDesk Dark Mode](screenshots/dark-mode.png)
+
+
 ## Live Demo
 
-Add your deployed project link here:
+🚀 [UPI PayDesk — Live Demo](https://hetmochi05.github.io/upi-paydesk/)
 
-```text
-https://YOUR-USERNAME.github.io/upi-paydesk/
-```
+Try the live application directly in your browser.
 
 ## Future Improvements
 
