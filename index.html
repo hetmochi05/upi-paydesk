@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="UPI Payment QR Generator & Business Payment Tool. Create, download and print UPI payment QR codes easily.">
+    <title>UPI Pay - Payment QR Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="brand">
+                <span class="brand-icon">
+                    <i class="bx bx-qr-scan"></i>
+                </span>
+                <span>
+                    <strong>UPI Pay</strong>
+                    <small>Payment Tool</small>
+                </span>
+            </a>
+            <div class="header-actions">
+                <button class="icon-btn" id="themeBtn" title="Toggle theme">
+                    <i class="bx bx-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="page-heading">
+            <span class="eyebrow">
+                <i class="bx bx-bolt-circle"></i>
+                Simple & Fast Payments
+            </span>
+            <h1>UPI Payment QR Generator</h1>
+            <p>Create a professional UPI payment QR code for your business in seconds.</p>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx bx-qr"></i></div>
+                <div>
+                    <span>QR Codes</span>
+                    <strong id="qrCount">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx bx-rupee"></i></div>
+                <div>
+                    <span>Total Amount</span>
+                    <strong id="totalAmount">₹0.00</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bx bx-calendar"></i></div>
+                <div>
+                    <span>Today's QR</span>
+                    <strong id="todayCount">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="app-grid">
+            <div class="form-card">
+                <div class="card-header">
+                    <div>
+                        <h2>Create Payment</h2>
+                        <p>Enter payment details to generate your QR code.</p>
+                    </div>
+                    <span class="secure-badge">
+                        <i class="bx bx-shield-check"></i>
+                        Secure
+                    </span>
+                </div>
+
+                <form id="paymentForm">
+                    <div class="form-section">
+                        <div class="section-title">
+                            <span class="section-number">01</span>
+                            <div>
+                                <h3>Business Information</h3>
+                                <p>Your payment receiver details</p>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="bizNameInput">Business Name <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="bx bx-store"></i>
+                                <input type="text" id="bizNameInput" placeholder="Enter business name" maxlength="60"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="upiIdInput">UPI ID <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="bx bx-wallet"></i>
+                                <input type="text" id="upiIdInput" placeholder="example@upi" maxlength="100" required>
+                            </div>
+                            <small class="input-help">Example: business@upi</small>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="clientNameInput">Client Name <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class='bx bx-user'></i>
+                                <input type="text" id="clientNameInput" placeholder="Enter client name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="section-title">
+                            <span class="section-number">02</span>
+                            <div>
+                                <h3>Payment Information</h3>
+                                <p>Enter the amount and payment details</p>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="amountInput">Amount <span>*</span></label>
+                            <div class="amount-input">
+                                <span>₹</span>
+                                <input type="number" id="amountInput" placeholder="0.00" min="1" max="10000000"
+                                    step="0.01" required>
+                            </div>
+                        </div>
+
+                        <div class="quick-amounts">
+                            <button type="button" data-amount="100">₹100</button>
+                            <button type="button" data-amount="200">₹200</button>
+                            <button type="button" data-amount="500">₹500</button>
+                            <button type="button" data-amount="1000">₹1,000</button>
+                            <button type="button" data-amount="5000">₹5,000</button>
+                            <button type="button" data-amount="10000">₹10,000</button>
+                            <button type="button" data-amount="20000">₹20,000</button>
+                            <button type="button" data-amount="30000">₹30,000</button>
+                            <button type="button" data-amount="40000">₹40,000</button>
+                            <button type="button" data-amount="50000">₹50,000</button>
+                            <button type="button" data-amount="100000">₹1,00,000</button>
+                        </div>
+
+                        <div class="two-column">
+                            <div class="input-group">
+                                <label for="referenceInput">Reference No.</label>
+                                <div class="input-wrapper">
+                                    <i class="bx bx-hash"></i>
+                                    <input type="text" id="referenceInput" placeholder="INV-001" maxlength="40">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="noteInput">Payment Note</label>
+                                <div class="input-wrapper">
+                                    <i class="bx bx-note"></i>
+                                    <input type="text" id="noteInput" placeholder="Payment for order" maxlength="80">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="resetBtn">
+                            <i class="bx bx-reset"></i>
+                            Reset
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="generateBtn">
+                            <i class="bx bx-qr-scan"></i>
+                            Generate QR
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="qr-card" id="qrCard">
+                <div class="qr-card-header">
+                    <div>
+                        <span class="qr-label">PAYMENT QR</span>
+                        <h2>Scan & Pay</h2>
+                    </div>
+                    <span class="live-badge">
+                        <span></span>
+                        Ready
+                    </span>
+                </div>
+
+                <div class="qr-preview">
+                    <div class="qr-placeholder" id="qrPlaceholder">
+                        <div class="placeholder-icon">
+                            <i class="bx bx-qr"></i>
+                        </div>
+                        <h3>Your QR Code</h3>
+                        <p>Enter payment details and click <strong>Generate QR</strong></p>
+                    </div>
+                    <div class="qr-code" id="upiQrCode"></div>
+                </div>
+
+                <div class="merchant-info">
+                    <span class="merchant-label">Paying to</span>
+                    <h3 id="qrBizName">Your Business Name</h3>
+                    <p id="qrUpiId">yourupi@bank</p>
+                </div>
+
+                <div class="amount-display">
+                    <span>Amount to Pay</span>
+                    <strong id="qrAmount">₹0.00</strong>
+                </div>
+
+                <div class="payment-meta">
+                    <div id="referenceRow">
+                        <span><i class="bx bx-hash"></i> Reference</span>
+                        <strong id="qrReference">-</strong>
+                    </div>
+                    <div id="noteRow">
+                        <span><i class="bx bx-note"></i> Note</span>
+                        <strong id="qrNote">-</strong>
+                    </div>
+                    <div class="info-row" id="clientRow">
+                        <span><i class='bx bx-user'></i> Client</span>
+                        <strong id="qrClientName">-</strong>
+                    </div>
+                </div>
+
+                <div class="qr-actions">
+                    <button class="action-btn" id="downloadBtn" disabled>
+                        <i class="bx bx-download"></i>
+                        Download
+                    </button>
+                    <button class="action-btn" id="copyBtn" disabled>
+                        <i class="bx bx-copy"></i>
+                        Copy Link
+                    </button>
+                    <button class="action-btn" id="printBtn" disabled>
+                        <i class="bx bx-printer"></i>
+                        Print
+                    </button>
+                </div>
+
+                <div class="scan-info">
+                    <i class="bx bx-info-circle"></i>
+                    <span>Scan this QR code using any compatible UPI app to make the payment.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-card">
+            <div class="history-header">
+                <div>
+                    <span class="eyebrow">
+                        <i class="bx bx-history"></i>
+                        Local History
+                    </span>
+                    <h2>Recent Payments</h2>
+                </div>
+                <button class="clear-history" id="clearHistoryBtn">
+                    <i class="bx bx-trash"></i>
+                    Clear History
+                </button>
+            </div>
+
+            <div class="history-table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Business</th>
+                            <th>Client</th>
+                            <th>UPI ID</th>
+                            <th>Amount</th>
+                            <th>Reference</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <tr class="empty-history">
+                            <td colspan="6">
+                                <i class="bx bx-receipt"></i>
+                                <p>No payment history yet</p>
+                                <span>Generated QR codes will appear here.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast">
+        <i class="bx bx-check-circle"></i>
+        <span id="toastMessage">Done</span>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <p>© <span id="currentYear"></span> UPI Pay. Built for simple business payments.</p>
+        </div>
+        <div>
+            <i class="bx bx-lock-alt"></i>
+            Your information stays in your browser
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
