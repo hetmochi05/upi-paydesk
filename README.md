@@ -125,21 +125,21 @@ Open `index.html` in a web browser.
 
 For development, you can also use the **Live Server** extension in VS Code.
 
-## Preview Of My Project  
+## Preview Of My Project
 
 ### QR Generator
 
-![UPI PayDesk Generator](screenshots/generator.png)
+<p align="center">
+  <img src="screenshots/generated-qr.png" width="48%">
+  <img src="screenshots/light-mode.png" width="48%">
+</p>
 
-### Payment History
+### Payment Management
 
-![UPI PayDesk History](screenshots/history.png)
-
-### UPI PayDesk
-
-![UPI PayDesk Light Mode](screenshots/light-mode.png)
-![UPI PayDesk Dark Mode](screenshots/dark-mode.png)
-
+<p align="center">
+  <img src="screenshots/history.png" width="48%">
+  <img src="screenshots/dark-mode.png" width="48%">
+</p>
 
 ## Live Demo
 
