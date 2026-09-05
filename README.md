@@ -129,10 +129,10 @@ For development, you can also use the **Live Server** extension in VS Code.
 
 ### QR Generator
 
-<p align="center"> <img src="assets/screenshorts/generated-qr.png" width="48%" height="auto" alt="Generated QR"> <img src="assets/screenshorts/light-mode.png" width="48%" height="auto" alt="Light Mode"> </p>
+<p align="center"> <img src="assets/screenshorts/generated-qr.png" width="25%" height="auto" alt="Generated QR"> <img src="assets/screenshorts/light-mode.png" width="25%" height="auto" alt="Light Mode"> </p>
 
 ### Payment Management
-<p align="center"> <img src="assets/screenshorts/history.png" width="48%" height="auto" alt="Payment History"> <img src="assets/screenshorts/dark-mode.png" width="48%" height="auto" alt="Dark Mode"> </p>
+<p align="center"> <img src="assets/screenshorts/history.png" width="25%" height="auto" alt="Payment History"> <img src="assets/screenshorts/dark-mode.png" width="25%" height="auto" alt="Dark Mode"> </p>
 
 ## Live Demo
 
