@@ -6,6 +6,12 @@ UPI PayDesk is a modern and responsive UPI payment QR generator and payment mana
 
 It allows users to generate dynamic UPI payment QR codes using business details, client information, UPI ID, amount, reference number, and payment notes. The application also keeps a local payment history and provides useful payment statistics for quick tracking.
 
+## Live Demo
+
+🚀 [UPI PayDesk — Live Demo](https://hetmochi05.github.io/upi-paydesk/)
+
+Try the live application directly in your browser.
+
 ## Features
 
 - Generate UPI payment QR codes
@@ -128,12 +134,6 @@ For development, you can also use the **Live Server** extension in VS Code.
 ## Preview Of My Project
 
 <p align="center"> <img src="assets/screenshorts/dark-mode.png" width="25%" height="auto" alt="Dark Mode"> <img src="assets/screenshorts/generated-qr.png" width="25%" height="auto" alt="Generated QR"> <img src="assets/screenshorts/light-mode.png" width="25%" height="auto" alt="Light Mode"> </p>
-
-## Live Demo
-
-🚀 [UPI PayDesk — Live Demo](https://hetmochi05.github.io/upi-paydesk/)
-
-Try the live application directly in your browser.
 
 ## Future Improvements
 
